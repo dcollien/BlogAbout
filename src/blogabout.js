@@ -117,7 +117,7 @@
 
     rebuild_editor = function(inline, resize_enabled) {
       var opts = {
-        skin: 'ozone',
+        skin: 'ozone-bootstrap',
         resize_enabled: !!resize_enabled
       };
 

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>BlogAbout example page</title>
+
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../src/blogabout.css">
+
+    <script type="text/javascript" src="../lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../lib/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="../src/blogabout.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="./arrows/css/bootstrap-arrows.css">
+    <script type="text/javascript" src="./arrows/js/bootstrap-arrows.min.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $.blogabout({
+                submit: function(html, success, error) {
+                    // fake a request delay
+                    setTimeout(function() {
+                        success();   
+                    }, 2000);
+                    console.log(html);
+                },
+
+                show: function() {
+                    // you've already opened the blog, don't need that pesky arrow anymore
+                    $('#arrow').remove();
+                }
+            });
+            
+            $('#arrow').bootstrapArrows().hide();
+        });
+    </script>
+
+    <style type="text/css">
+        @import url(http://fonts.googleapis.com/css?family=Lovers+Quarrel|Open+Sans);
+
+        #lipsum {
+            padding-top: 10px;
+
+            padding-left: 140px;
+            padding-right: 140px;
+            font-family: 'Open Sans';
+        }
+
+        #first:first-letter {
+            font-family: 'Lovers Quarrel';
+            font-size: 120px;
+            float: left;
+
+            margin-top: 10px;
+            padding-right: 28px;
+            padding-bottom: 8px;
+            padding-top: 10px;
+        }
+
+        #lipsum img {
+            margin: 10px;
+        }
+
+        #web2-footer {
+            height: 170px;
+            width: 100%;
+            background-color: #222;
+            border-top: 4px solid #555;
+        }
+
+        #web2-footer:before {
+            content: ' ';
+            display: block;
+            height: 6px;
+            width: 100%;
+            background-color: #444;
+            border-bottom: 8px solid #333;
+        }
+
+        #web2-footer-content {
+            margin-top: 60px;
+            margin-left: 10%;
+            color: #666;
+            font-size: 12px;
+        }
+
+        #web2-footer-content:first-line {
+            font-size: 16px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div id="lipsum">
+
+        <div class="hero-unit">
+            <h1>Example page to blog about!</h1>
+            <span class="lead">
+                To blog, or not to blog, that is the question
+            </span>
+        </div>
+        <p id="first">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis sapien pretium tortor fermentum ac vestibulum risus ornare. Ut non lorem vel neque viverra rutrum. Suspendisse potenti. Vestibulum consectetur faucibus mollis. Ut at enim sit amet erat consequat mollis et a sem. Maecenas vitae aliquam ante. Donec scelerisque elementum dolor id tincidunt. Morbi non erat id arcu pretium consequat id quis nibh. Phasellus accumsan velit ac erat gravida placerat. Morbi vitae sem eu massa mollis ultricies.
+        </p>
+        <img src="http://lorempixel.com/400/200/abstract/1" class="img-polaroid pull-left"/>
+        <p>
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque consectetur tincidunt sem, non tempor metus luctus vehicula. Sed elit velit, faucibus non malesuada vitae, sagittis sed lorem. Suspendisse potenti. Cras iaculis mattis risus, vitae adipiscing nunc pharetra id. Pellentesque id fermentum erat. Morbi vel enim elit. Nullam magna nisl, semper vel tempus id, faucibus vitae nisl.
+        </p>
+        <p>
+        Etiam sem arcu, auctor et volutpat a, ultricies ut quam. Fusce nec ipsum ligula. Maecenas eget est eu ligula accumsan blandit ac eu nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse commodo vestibulum nisl et varius. In hac habitasse platea dictumst. Aliquam adipiscing orci id leo pretium lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus nisl tellus, venenatis sit amet commodo ac, pellentesque nec justo. Phasellus at velit molestie ipsum venenatis tristique eu quis odio. Pellentesque justo sem, rutrum id faucibus eget, feugiat eu ipsum.
+        </p>
+        <img src="http://lorempixel.com/400/200/cats/1" class="img-polaroid pull-right"/>
+        <p>
+        In varius pellentesque aliquet. Nam ultrices sapien vitae libero dapibus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras quis magna in nibh vulputate lacinia. Mauris leo tortor, aliquet in posuere vitae, mollis eu nisl. Donec nec imperdiet dolor. Nulla orci nisl, interdum auctor ullamcorper non, eleifend eu turpis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis commodo semper convallis. Aliquam tincidunt, nulla et rhoncus varius, nisl massa laoreet arcu, a elementum lorem augue a mi. Donec elit magna, mattis sed ultricies at, commodo quis ipsum. Mauris nisl leo, mattis vel dapibus et, laoreet in quam. Morbi ac consectetur erat. Suspendisse quam libero, eleifend pharetra suscipit semper, fermentum id odio.
+        </p>
+        <p>
+        Suspendisse odio purus, hendrerit pulvinar dignissim sed, scelerisque non odio. Curabitur at turpis sed sapien aliquam tincidunt luctus eleifend turpis. Cras eget lorem tellus, sed viverra leo. Quisque blandit tempor magna, a elementum enim venenatis in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tincidunt lobortis sem, sit amet suscipit purus bibendum nec. Aliquam et tortor massa, ut aliquam sapien. Nam ut orci eros, nec tempor ipsum. Nulla facilisi. Maecenas suscipit neque eu sapien pretium ac pretium ligula vehicula. Integer in tellus elit. Suspendisse potenti. Vestibulum eget turpis ipsum. Praesent id turpis lectus, quis commodo quam. Curabitur pharetra magna quis nunc sodales eget accumsan ipsum lacinia. Nam sit amet hendrerit urna.
+        </p>
+        <img src="http://lorempixel.com/400/200/nature/1" class="img-polaroid pull-left"/>
+        <p>
+        Ut porttitor dolor non leo tempor interdum. Donec hendrerit enim imperdiet odio dignissim a blandit nulla egestas. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer lorem felis, gravida vitae cursus ac, ullamcorper quis ante. Nulla tempus suscipit sodales. Pellentesque elit dui, dignissim quis ullamcorper a, placerat sed mauris. Mauris a condimentum lectus. Proin ut metus id nulla malesuada porttitor. Aliquam volutpat scelerisque orci non tempus.
+        </p>
+        <p>
+        Nulla a commodo purus. Fusce et lacus magna, in ultrices nunc. Sed consequat scelerisque ante ac tincidunt. Fusce eleifend mauris eget nulla tempus non tristique neque vestibulum. Vivamus felis neque, laoreet ac rhoncus ac, placerat non massa. Sed rutrum interdum odio, sed placerat lacus fermentum et. Nulla facilisi. Vivamus vitae lobortis quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec turpis nunc, commodo eget viverra sit amet, scelerisque vitae quam.
+        </p>
+        <p>
+        Phasellus a enim id turpis adipiscing condimentum eu sed leo. Nunc a nulla sit amet lectus tempus mollis. Phasellus rutrum, odio id aliquam faucibus, risus sem rhoncus felis, in venenatis orci sapien vitae justo. Suspendisse vitae auctor libero. Cras facilisis, lectus in rutrum sollicitudin, enim ante cursus enim, at venenatis lacus eros id velit. Nam diam odio, blandit ac sodales sollicitudin, vehicula vel elit. Praesent a tempor lectus. Maecenas commodo enim et diam tristique a dapibus nisi auctor. Phasellus auctor, lectus ac laoreet ultrices, eros velit convallis lectus, id ultrices tellus orci vel eros. Phasellus sit amet augue sapien. Fusce felis arcu, varius ac ullamcorper at, consectetur id urna.
+        </p>
+        <img src="http://lorempixel.com/400/200/food/1" class="img-polaroid pull-left"/>
+        <p>
+        Ut nulla turpis, pellentesque vel sollicitudin eget, mattis sit amet justo. Quisque quis ipsum eget magna molestie lacinia. Vivamus in diam sit amet nibh venenatis posuere. Etiam id orci id odio tincidunt sollicitudin. Duis eu est sapien. Pellentesque felis dui, pulvinar laoreet viverra eget, lobortis vel augue. Donec id nulla tortor, eu hendrerit arcu. Curabitur non convallis nisi. Quisque auctor scelerisque ipsum, ut ultrices magna ultricies et. Etiam vel convallis ante. Aliquam tincidunt sem bibendum erat tincidunt at porttitor nisi rutrum. Phasellus sagittis luctus porta. Morbi consectetur egestas lectus. Phasellus congue venenatis metus, eget scelerisque mi blandit vel. Curabitur sagittis ante sit amet dolor hendrerit pharetra.
+        </p>
+        <img src="http://lorempixel.com/400/200/city/1" class="img-polaroid pull-right"/>
+        <p>
+        Cras faucibus nisi vel dui ornare adipiscing viverra purus tempor. Donec sed libero magna. Suspendisse quis pulvinar lectus. Curabitur vestibulum tristique semper. Fusce et purus porta arcu lacinia ultrices. Nunc imperdiet justo in libero consequat non ornare lacus fermentum. Fusce ac ligula ipsum. Donec scelerisque felis vitae nunc viverra vitae cursus urna posuere. Ut elementum egestas viverra. Aliquam et faucibus libero. Donec in nisi elit, non sollicitudin leo. Morbi elit justo, lobortis ut egestas quis, rutrum nec tortor. Aliquam eu nisi nisl. Nunc volutpat consectetur nisi.
+        </p>
+        <div class="clearfix"></div>
+    </div>
+
+    <div id="web2-footer">
+        <div id="web2-footer-content">
+            <p>
+                Obligatory Web 2.0 Footer<br>
+                BlogAbout. 2013, David Collien
+            </p>
+    </div>
+
+    <span id="arrow" class="arrow-warning-large" rel="180" style="position: fixed; right: 22px; bottom: 45px">
+    <script type="text/javascript">
+        // bounce an arrow for attention
+        $(window).load(function() {
+            $('#arrow').fadeIn().animate({
+                'bottom': '100px'
+            },
+                function() {
+                    $(this).animate({
+                        'bottom': '45px'
+                    }, function() {
+                        $(this).animate({
+                            'bottom': '100px',
+                        }, function() {
+                            $(this).animate({
+                                'bottom': '45px',
+                                'opacity': '0'
+                            }, function() {
+                                $(this).hide();
+                            });
+                        });
+                    });
+                }
+            )
+        });
+    </script>
+</body>
+</html>

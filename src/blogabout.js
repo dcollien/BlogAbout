@@ -115,6 +115,13 @@
     $toolbar.hide();
 
 
+    destroy_editor = function() {
+      if (CKEDITOR && CKEDITOR.instances['blog-editable']) {
+        CKEDITOR.instances['blog-editable'].destroy(true);
+        ckeditor = null;
+      }
+    };
+
     rebuild_editor = function(inline, resize_enabled) {
       var opts = {
         skin: 'ozone-bootstrap',
@@ -122,6 +129,9 @@
       };
 
       if (CKEDITOR) {
+        if (ckeditor != null) {
+          destroy_editor();
+        }
         if (inline) {
           ckeditor = CKEDITOR.inline('blog-editable', opts);
         } else {
@@ -129,13 +139,6 @@
         }
       }
     };
-
-    destroy_editor = function() {
-      if (CKEDITOR && CKEDITOR.instances['blog-editable']) {
-        CKEDITOR.instances['blog-editable'].destroy(true);
-      }
-    };
-
 
     var btnBottom, btnRight;
     popin = function() {
@@ -328,5 +331,8 @@
         evt.preventDefault();
       }
     });
+
+
+    rebuild_editor();
   };
 })(jQuery);

@@ -33,6 +33,7 @@
                 }
             });
             
+            $('#blog-tab').hide();
             $('#arrow').bootstrapArrows().hide();
         });
     </script>
@@ -151,6 +152,8 @@
     <script type="text/javascript">
         // bounce an arrow for attention
         $(window).load(function() {
+
+            $('#blog-tab').fadeIn();
             $('#arrow').fadeIn().animate({
                 'bottom': '100px'
             },
